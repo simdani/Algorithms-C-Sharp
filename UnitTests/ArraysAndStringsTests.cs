@@ -23,9 +23,14 @@ namespace UnitTests
         }
 
         [Fact]
-        public void CheckPermutations()
+        public void TestCheckPermutations()
         {
+            // sort strings and check if permutation
+            Assert.True(CheckPermutations.PermutationsSortString("god", "dog"));
+            Assert.False(CheckPermutations.PermutationsSortString("abc", "cbd"));
 
+            Assert.True(CheckPermutations.Permutations("god", "dog"));
+            Assert.False(CheckPermutations.Permutations("abc", "cbd"));
         }
     }
 }
