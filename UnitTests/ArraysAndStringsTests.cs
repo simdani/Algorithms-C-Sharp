@@ -73,5 +73,18 @@ namespace UnitTests
             Assert.True(OneAway.OneAwayEditWhole("pale", "bale"));
             Assert.False(OneAway.OneAwayEditWhole("pale", "bae"));
         }
+
+        [Fact]
+        public void TestStringCompression()
+        {
+            // solution #1 ineffective string comparison
+            Assert.Equal("a2b1c5a3", StringCompression.CompressBad("aabcccccaaa"));
+
+            // solution #2 with string builder
+            Assert.Equal("a2b1c5a3", StringCompression.CompressStringBuilder("aabcccccaaa"));
+
+            // solution #3 with added check if compressed string is longer than initial one
+            Assert.Equal("a2b1c5a3", StringCompression.Compress("aabcccccaaa"));
+        }
     }
 }
