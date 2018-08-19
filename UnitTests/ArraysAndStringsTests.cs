@@ -44,5 +44,18 @@ namespace UnitTests
             UrLify.ReplaceSpaces(name, 13);
             Assert.Equal("Mr%20John%20Smith", name);
         }
+
+        [Fact]
+        public void TestPalindromePermutation()
+        {
+            // solution #1 by checking frequency table
+            Assert.True(PalindromePermutation.IsPermutationofPalindrome("Tact Coa"));
+
+            // solution #2 same as #1 just more optimzed
+            Assert.True(PalindromePermutation.IsPermutationOfPalindromeOptimized("Tact Coa"));
+
+            // solution #3 using bit arithmetics
+            Assert.True(PalindromePermutation.IsPermutationOfPalindromeBits("Tact Coa"));
+        }
     }
 }
