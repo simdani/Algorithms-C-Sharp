@@ -57,5 +57,21 @@ namespace UnitTests
             // solution #3 using bit arithmetics
             Assert.True(PalindromePermutation.IsPermutationOfPalindromeBits("Tact Coa"));
         }
+
+        [Fact]
+        public void TestOneAway()
+        {
+            // solution #1
+            Assert.True(OneAway.OneAwayEdit("pale", "ple"));
+            Assert.True(OneAway.OneAwayEdit("pales", "pale"));
+            Assert.True(OneAway.OneAwayEdit("pale", "bale"));
+            Assert.False(OneAway.OneAwayEdit("pale", "bae"));
+
+            // solution #2
+            Assert.True(OneAway.OneAwayEditWhole("pale", "ple"));
+            Assert.True(OneAway.OneAwayEditWhole("pales", "pale"));
+            Assert.True(OneAway.OneAwayEditWhole("pale", "bale"));
+            Assert.False(OneAway.OneAwayEditWhole("pale", "bae"));
+        }
     }
 }
