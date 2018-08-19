@@ -32,5 +32,17 @@ namespace UnitTests
             Assert.True(CheckPermutations.Permutations("god", "dog"));
             Assert.False(CheckPermutations.Permutations("abc", "cbd"));
         }
+
+        [Fact]
+        public void TestUrlify()
+        {
+            // simple testing method
+            Assert.Equal("Mr%20John%20Smith", UrLify.Urlify("Mr John Smith    ", 13));
+
+            // method 2 by iterating throug char array
+            char[] name = "Mr John Smith    ".ToCharArray();
+            UrLify.ReplaceSpaces(name, 13);
+            Assert.Equal("Mr%20John%20Smith", name);
+        }
     }
 }
