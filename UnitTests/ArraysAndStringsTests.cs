@@ -86,5 +86,12 @@ namespace UnitTests
             // solution #3 with added check if compressed string is longer than initial one
             Assert.Equal("a2b1c5a3", StringCompression.Compress("aabcccccaaa"));
         }
+
+        [Fact]
+        public void TestStringRotation()
+        {
+            Assert.True(StringRotation.IsRotation("waterbottle", "erbottlewat"));
+            Assert.False(StringRotation.IsRotation("waterbottle", "erbotllewat"));
+        }
     }
 }
