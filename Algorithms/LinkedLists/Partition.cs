@@ -1,23 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Algorithms.Helpers;
 
 namespace Algorithms.LinkedLists
 {
     public static class Partition
     {
         // solution #1 pass in the head of th elinked list and the value to partition around
-        public static LinkedListNode.LinkedListNode PartitionSolution(LinkedListNode.LinkedListNode node, int x)
+        public static LinkedListNode PartitionSolution(LinkedListNode node, int x)
         {
-            LinkedListNode.LinkedListNode beforeStart = null;
-            LinkedListNode.LinkedListNode beforeEnd = null;
-            LinkedListNode.LinkedListNode afterStart = null;
-            LinkedListNode.LinkedListNode afterEnd = null;
+            LinkedListNode beforeStart = null;
+            LinkedListNode beforeEnd = null;
+            LinkedListNode afterStart = null;
+            LinkedListNode afterEnd = null;
 
             // partition list
             while (node != null)
             {
-                LinkedListNode.LinkedListNode next = node.next;
+                LinkedListNode next = node.next;
                 node.next = null;
                 if (node.data < x)
                 {
@@ -61,14 +62,14 @@ namespace Algorithms.LinkedLists
             return beforeStart;
         }
 
-        public static LinkedListNode.LinkedListNode PartitionOptimized(LinkedListNode.LinkedListNode node, int x)
+        public static LinkedListNode PartitionOptimized(LinkedListNode node, int x)
         {
-            LinkedListNode.LinkedListNode head = node;
-            LinkedListNode.LinkedListNode tail = node;
+            LinkedListNode head = node;
+            LinkedListNode tail = node;
 
             while (node != null)
             {
-                LinkedListNode.LinkedListNode next = node.next;
+                LinkedListNode next = node.next;
                 if (node.data < x)
                 {
                     // insert node at head

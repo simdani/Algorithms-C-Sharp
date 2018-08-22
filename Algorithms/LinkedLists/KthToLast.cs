@@ -3,13 +3,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Algorithms.Helpers;
 
 namespace Algorithms.LinkedLists
 {
     public static class KthToLast
     {
         // solution #1 recursive
-        public static int PrintKthToLastRecursive(LinkedListNode.LinkedListNode head, int k)
+        public static int PrintKthToLastRecursive(LinkedListNode head, int k)
         {
             if (head == null)
             {
@@ -26,10 +27,10 @@ namespace Algorithms.LinkedLists
         }
 
         // solution #2 iterative
-        public static LinkedListNode.LinkedListNode NthToLastIterative(LinkedListNode.LinkedListNode head, int k)
+        public static LinkedListNode NthToLastIterative(LinkedListNode head, int k)
         {
-            LinkedListNode.LinkedListNode p1 = head;
-            LinkedListNode.LinkedListNode p2 = head;
+            LinkedListNode p1 = head;
+            LinkedListNode p2 = head;
 
             // move p1 k nodes into the list
             for (int i = 0; i < k; i++)

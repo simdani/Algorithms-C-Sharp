@@ -2,16 +2,17 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Algorithms.Helpers;
 
 namespace Algorithms.LinkedLists
 {
     public static class RemoveDups
     {
         // solution #1
-        public static void DeleteDups(LinkedListNode.LinkedListNode n)
+        public static void DeleteDups(LinkedListNode n)
         {
             HashSet<int> set = new HashSet<int>();
-            LinkedListNode.LinkedListNode previous = null;
+            LinkedListNode previous = null;
             while (n != null)
             {
                 if (set.Contains(n.data))
@@ -29,13 +30,13 @@ namespace Algorithms.LinkedLists
         }
 
         // solution #2 no buffer allowed
-        public static void DeleteDupsNoBuffer(LinkedListNode.LinkedListNode head)
+        public static void DeleteDupsNoBuffer(LinkedListNode head)
         {
-            LinkedListNode.LinkedListNode current = head;
+            LinkedListNode current = head;
             while (current != null)
             {
                 // remove all future nodes that have the same value
-                LinkedListNode.LinkedListNode runner = current;
+                LinkedListNode runner = current;
                 while (runner.next != null)
                 {
                     if (runner.next.data == current.data)

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Algorithms.LinkedLists.LinkedListNode
+﻿namespace Algorithms.Helpers
 {
     public class LinkedListNode
     {
@@ -22,6 +18,32 @@ namespace Algorithms.LinkedLists.LinkedListNode
         }
 
         public LinkedListNode() { }
+
+        public static LinkedListNode BuildList(int[] data)
+        {
+            if (data == null || data.Length == 0) return null;
+            LinkedListNode n = new LinkedListNode(data[0]);
+            LinkedListNode head = n;
+            for (int i = 1; i < data.Length; i++)
+            {
+                n.next = new LinkedListNode(data[i]);
+                n = n.next;
+            }
+
+            return head;
+        }
+
+        public static int Length(LinkedListNode head)
+        {
+            int len = 0;
+            while (head != null)
+            {
+                len++;
+                head = head.next;
+            }
+
+            return len;
+        }
 
         public void SetNext(LinkedListNode n)
         {
