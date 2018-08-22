@@ -34,6 +34,54 @@ namespace UnitTests
         }
 
         [Fact]
+        public void TestDeleteMiddleNode()
+        {
+            int[] l1 = new int[] {1, 2, 3, 4, 5};
+
+            LinkedListNode result = LinkedListNode.BuildList(l1);
+
+            Assert.True(DeleteMiddlenode.DeleteNode(result));
+        }
+
+        [Fact]
+        public void TestKthToLast()
+        {
+            int[] l1 = new int[] { 1, 2, 3, 4, 5 };
+            int[] expected = new int[] { 3, 4, 5};
+
+            LinkedListNode l1List = LinkedListNode.BuildList(l1);
+            LinkedListNode expectedList = LinkedListNode.BuildList(expected);
+
+            LinkedListNode result = KthToLast.NthToLastIterative(l1List, 3);
+
+            while (result != null || expectedList != null)
+            {
+                Assert.Equal(expectedList.data, result.data);
+                result = result.next;
+                expectedList = expectedList.next;
+            }
+        }
+
+        [Fact]
+        public void TestPartition()
+        {
+            int[] l1 = new int[] { 1, 1, 1, 5, 1, 1, 1 };
+            int[] expected = new int[] { 1, 1, 1, 1, 1, 1, 5};
+
+            LinkedListNode l1List = LinkedListNode.BuildList(l1);
+            LinkedListNode expectedList = LinkedListNode.BuildList(expected);
+
+            LinkedListNode result = Partition.PartitionSolution(l1List, 5);
+
+            while (result != null && expectedList != null)
+            {
+                Assert.Equal(expectedList.data, result.data);
+                result = result.next;
+                expectedList = expectedList.next;
+            }
+        }
+
+        [Fact]
         public void TestSumLists()
         {
             int[] l1 = new int[] {7,1,6};
@@ -43,6 +91,8 @@ namespace UnitTests
             LinkedListNode l1List = LinkedListNode.BuildList(l1);
             LinkedListNode l2List = LinkedListNode.BuildList(l2);
             LinkedListNode expectedList = LinkedListNode.BuildList(expected);
+
+
 
             LinkedListNode result = SumLists.AddLists(l1List, l2List, 0);
 
