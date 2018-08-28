@@ -19,6 +19,14 @@ namespace UnitTests
             Assert.True(RouteBetweenNodes.Search(g, start, end));
         }
 
+        [Fact]
+        public void TestMinimalBst()
+        {
+            int[] array = {1, 2, 4, 4, 5, 6, 7, 8};
+            TreeNode root = MinimalBst.CreateMinimalBST(array);
+            Assert.True(root.IsBST());
+        }
+
         private static Graph CreateNewGraph()
         {
             Graph g = new Graph();
