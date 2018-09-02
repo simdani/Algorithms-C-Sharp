@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Algorithms
 {
-    class Program
+    public static class Program
     {
-        static void Main(String[] args)
+        public static void Main(string[] args)
         {
-            Console.ReadKey();
+
         }
     }
 }
